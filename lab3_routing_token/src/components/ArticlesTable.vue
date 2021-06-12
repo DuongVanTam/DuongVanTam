@@ -1,8 +1,4 @@
 <template>
-  <b-card-code
-    title="Row details support"
-    no-body
-  >
     <div>
       <b-table
         :items="items"
@@ -19,9 +15,11 @@
         <template #cell(categories)="data">
           {{data.value[0]}}
         </template>
+        <template #cell(text)="data">
+          {{data.value | dsText}}
+        </template>
       </b-table>
     </div>
-  </b-card-code>
 </template>
 
 <script>

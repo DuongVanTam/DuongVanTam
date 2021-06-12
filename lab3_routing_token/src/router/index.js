@@ -4,10 +4,11 @@ import HelloWorld from '@/components/HelloWorld'
 import Dashboard from '@/components/Dashboard'
 import ProductsTable from '@/components/ProductsTable'
 import Articles from '@/components/ArticlesTable'
-
+import login from '@/components/login'
+import { isAuth } from '../assets/auth'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -28,6 +29,17 @@ export default new Router({
           component: Articles
         }
       ]
+    },
+    {
+      path: '/auth-login',
+      name: 'auth-login',
+      component: login
     }
   ]
 })
+router.beforeEach((to, from, next) => {
+  console.log('hahahahhahhahaha')
+  if (to.name !== 'auth-login' && !isAuth) next({ name: 'auth-login' })
+  else next()
+})
+export default router

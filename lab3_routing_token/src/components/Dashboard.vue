@@ -33,7 +33,9 @@ export default {
       await get(this.cate, 1, 5).then(rs => {
         this.products = rs.data
       })
-      await getA(this.cate, 1, 5).then(rs => {
+      new Promise((resolve, reject) => {
+        resolve(getA(this.cate, 1, 5))
+      }).then(rs => {
         this.articles = rs.data
       })
     }

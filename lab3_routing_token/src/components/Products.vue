@@ -2,8 +2,8 @@
 <div id="products" class="row" style="margin-left: 0px;">
   <h1>Products</h1>
   <div class="col-md-4"
-       v-for="product in filldt"
-       :key="product.id">
+       v-for="(product,index) in filldt"
+       :key="index">
     <b-card
       class="ecommerce-card "
       no-body
@@ -18,12 +18,11 @@
       </div>
 
       <!-- Product Details -->
-      <b-card-body>
+      <b-card-body >
         <div class="item-wrapper">
-          <b-card-text>{{product.name}}</b-card-text>
+          <b-card-text v-color>{{product.name}}</b-card-text>
           <div>
-            <h6 class="item-price">
-              ${{ product.price }}
+            <h6 class="item-price" v-html="$red(product.price)">
             </h6>
           </div>
         </div>
@@ -47,12 +46,13 @@ export default {
     BLink
   },
   props: ['p'],
+  mounted () {
+  },
   computed: {
     filldt: function () {
       let a = []
       let [c, b, d] = this.p
       a.push(c, b, d)
-      console.log(this.p)
       return a
     }
   }

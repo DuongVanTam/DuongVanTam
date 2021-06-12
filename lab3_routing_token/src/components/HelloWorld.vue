@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div class="row">
+    <div class="row" style="position: relative">
       <div class="col-md-3 navlef" >
         <div class="menu-left">
           <div>
@@ -16,14 +16,15 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-9">
-        <b-navbar toggleable="lg"  class="navbarr">
-          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <div class="col-md-9" >
+        <b-navbar toggleable="lg"  class="navbarr" >
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ms-auto">
-            <b-icon icon="person-fill" style="width: 50px; height: 50px;"/>
-            <b-navbar-brand>Admin</b-navbar-brand>
+          <b-navbar-nav class="ms-auto" @click="toOut = !toOut" style="cursor: pointer">
+            <b-icon icon="person-fill" style="width: 50px; height: 50px;margin-right: 10px"/>
+            <b-navbar-brand >Admin</b-navbar-brand>
+            <h6 @click="toLogout" style="position: relative; top: 12px" v-if="toOut">Log Out!</h6>
           </b-navbar-nav>
+
         </b-navbar>
         <router-view/>
       </div>
@@ -36,7 +37,14 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      toOut: false
+    }
+  },
+  methods: {
+    toLogout: function () {
+      localStorage.removeItem('userData')
+      this.$router.replace({path: '/auth-login'})
     }
   }
 }
