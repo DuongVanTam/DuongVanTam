@@ -1,11 +1,7 @@
 <template>
-    <b-card-code
-      title="Row details support"
-      no-body
-    >
       <div>
         <b-table
-          :items="items"
+          :items="a"
           :fields="fields"
           striped
           responsive
@@ -19,37 +15,40 @@
           <template #cell(categories)="data">
             {{data.value[0]}}
           </template>
+          <template #cell(action)="data">
+            <b-icon icon="trash" @click="deleteP(data)"></b-icon>
+          </template>
         </b-table>
       </div>
-    </b-card-code>
 </template>
 
 <script>
-import {get} from '../assets/product'
+import mixin from '../mixins'
 import {
-  BTable, BFormCheckbox, BAvatar
+  BTable, BFormCheckbox, BAvatar, BIcon
 } from 'bootstrap-vue'
 export default {
   name: 'ProductsTable',
   components: {
     BTable,
     BFormCheckbox,
-    BAvatar
+    BAvatar,
+    BIcon
   },
   data () {
     return {
-      fields: [{ key: 'img', label: 'Avatar' }, 'name', 'price', 'categories'],
-      items: []
+      fields: [{ key: 'img', label: 'Avatar' }, 'name', 'price', 'categories', 'action']
     }
   },
-  created () {
-    this.getdata()
+  mixins: [mixin],
+  computed: {
+    a: function () {
+      return this.$store.state.data.products
+    }
   },
   methods: {
-    getdata: async function () {
-      await get({}, 1, 5).then(rs => {
-        this.items = rs.data
-      })
+    deleteP (p) {
+      this.$store.dispatch('data/deleteProduct', p)
     }
   }
 }

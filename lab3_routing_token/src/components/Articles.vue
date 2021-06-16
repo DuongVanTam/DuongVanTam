@@ -1,7 +1,7 @@
 <template>
   <div id="products">
     <h1>Articles</h1>
-    <div class="row mb-3"  v-for="(arr,index) in filldtt" :key="index">
+    <div class="row mb-3"  v-for="(arr,index) in arti" :key="index">
       <div class="clearfix col-md-3">
         <b-img left :src="arr.img" width="200px" height="200px" alt="Left image"></b-img>
       </div>
@@ -24,13 +24,13 @@ export default {
     BCardText,
     BLink
   },
-  props: ['arti'],
-  computed: {
-    filldtt: function () {
-      let a = []
-      let [c, b, d] = this.arti
-      a.push(c, b, d)
-      return a
+  props: {
+    arti: {
+      type: Array,
+      default: () => [1, 2],
+      validate: function (value) {
+        return value.length > 3
+      }
     }
   }
 }

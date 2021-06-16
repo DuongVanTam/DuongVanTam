@@ -1,3 +1,3 @@
 export const isAuth = function () {
-  return localStorage.getItem('user')
+  return localStorage.getItem('userData')
 }

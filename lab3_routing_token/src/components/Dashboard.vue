@@ -6,39 +6,21 @@
 </template>
 
 <script>
-import {get} from '../assets/product'
-import {getA} from '../assets/article'
 import Products from './Products'
 import Articles from './Articles'
-
+import mixin from '../mixins'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     Products,
     Articles
   },
-  data () {
-    return {
-      products: [],
-      articles: [],
-      cate: {
-        categories: 'electronics'
-      }
-    }
-  },
-  created () {
-    this.getdata()
-  },
-  methods: {
-    getdata: async function () {
-      await get(this.cate, 1, 5).then(rs => {
-        this.products = rs.data
-      })
-      new Promise((resolve, reject) => {
-        resolve(getA(this.cate, 1, 5))
-      }).then(rs => {
-        this.articles = rs.data
-      })
-    }
+  mixins: [mixin],
+  computed: {
+    ...mapGetters({
+      products: 'data/pro',
+      articles: 'art/art'
+    })
   }
 }
 </script>

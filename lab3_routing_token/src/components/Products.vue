@@ -2,7 +2,7 @@
 <div id="products" class="row" style="margin-left: 0px;">
   <h1>Products</h1>
   <div class="col-md-4"
-       v-for="(product,index) in filldt"
+       v-for="(product,index) in p"
        :key="index">
     <b-card
       class="ecommerce-card "
@@ -45,15 +45,13 @@ export default {
     BCardText,
     BLink
   },
-  props: ['p'],
-  mounted () {
-  },
-  computed: {
-    filldt: function () {
-      let a = []
-      let [c, b, d] = this.p
-      a.push(c, b, d)
-      return a
+  props: {
+    p: {
+      type: Array,
+      validate: function (value) {
+        return value.length > 3
+      },
+      default: () => [1, 2]
     }
   }
 }

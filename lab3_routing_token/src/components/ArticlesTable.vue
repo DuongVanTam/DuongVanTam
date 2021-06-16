@@ -1,7 +1,7 @@
 <template>
     <div>
       <b-table
-        :items="items"
+        :items="a"
         :fields="fields"
         striped
         responsive
@@ -18,15 +18,19 @@
         <template #cell(text)="data">
           {{data.value | dsText}}
         </template>
+        <template #cell(action)="data">
+          <b-icon icon="trash" @click="deleteA(data)"></b-icon>
+        </template>
       </b-table>
     </div>
 </template>
 
 <script>
-import {getA} from '../assets/article'
+import mixin from '../mixins'
 import {
   BTable, BFormCheckbox, BAvatar
 } from 'bootstrap-vue'
+
 export default {
   name: 'ProductsTable',
   components: {
@@ -36,18 +40,18 @@ export default {
   },
   data () {
     return {
-      fields: [{ key: 'img', label: 'Avatar' }, 'name', 'categories', 'text'],
-      items: []
+      fields: [{ key: 'img', label: 'Avatar' }, 'name', 'categories', 'text', 'action']
     }
   },
-  created () {
-    this.getdata()
+  mixins: [mixin],
+  computed: {
+    a: function () {
+      return this.$store.state.art.articles
+    }
   },
   methods: {
-    getdata: async function () {
-      await getA({}, 1, 5).then(rs => {
-        this.items = rs.data
-      })
+    deleteA (ar) {
+      this.$store.dispatch('art/deleteArticle', ar)
     }
   }
 }

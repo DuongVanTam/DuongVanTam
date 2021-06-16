@@ -5,11 +5,11 @@ export default {
       return `<p style="color: red">${vl}</p>`
       // eslint-disable-next-line no-sequences
     },
-    Vue.mixin({
-      created () {
-        console.log('h~~~~~~~~~~~~~~~~')
-      }
-    }),
+    // Vue.mixin({
+    //   created () {
+    //     console.log('h~~~~~~~~~~~~~~~~')
+    //   }
+    // }),
     Vue.filter('dsText',
       (value) => {
         return value.substr(0, 30).concat('...')
