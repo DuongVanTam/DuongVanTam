@@ -7,7 +7,7 @@ const getProducts = async function (context) {
   })
 }
 const deleteProduct = async (context, payload) => {
-  await context.commit('delProduct', payload)
+  await context.commit('deleteProduct', payload)
 }
 
 export default {

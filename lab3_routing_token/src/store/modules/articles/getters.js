@@ -1,5 +1,5 @@
-const art = state => state.articles.slice(0, 3)
+const getArticles = state => state.articles
 
 export default {
-  art
+  getArticles
 }

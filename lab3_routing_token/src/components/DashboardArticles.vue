@@ -1,7 +1,7 @@
 <template>
   <div id="products">
     <h1>Articles</h1>
-    <div class="row mb-3"  v-for="(arr,index) in arti" :key="index">
+    <div class="row mb-3"  v-for="(arr,index) in articles" :key="index">
       <div class="clearfix col-md-3">
         <b-img left :src="arr.img" width="200px" height="200px" alt="Left image"></b-img>
       </div>
@@ -25,18 +25,15 @@ export default {
     BLink
   },
   props: {
-    arti: {
+    articles: {
       type: Array,
-      default: () => [1, 2],
-      validate: function (value) {
-        return value.length > 3
-      }
+      default: () => [1, 2]
     }
   }
 }
 
-</script>
-<style>
+</script >
+<style scope>
 #products{
   margin-top: 20px;
   background-color: white;

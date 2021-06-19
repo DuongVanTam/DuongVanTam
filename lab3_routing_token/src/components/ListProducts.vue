@@ -1,14 +1,12 @@
 <template>
       <div>
         <b-table
-          :items="a"
+          :items="dataProducts"
           :fields="fields"
           striped
           responsive
           class="mb-0"
         >
-          <!-- full detail on click -->
-
           <template #cell(img)="data">
             <b-avatar :src="data.value" />
           </template>
@@ -16,7 +14,7 @@
             {{data.value[0]}}
           </template>
           <template #cell(action)="data">
-            <b-icon icon="trash" @click="deleteP(data)"></b-icon>
+            <b-icon icon="trash" @click="deleteProduct(data)"></b-icon>
           </template>
         </b-table>
       </div>
@@ -42,13 +40,13 @@ export default {
   },
   mixins: [mixin],
   computed: {
-    a: function () {
-      return this.$store.state.data.products
+    dataProducts: function () {
+      return this.$store.state.products.products
     }
   },
   methods: {
-    deleteP (p) {
-      this.$store.dispatch('data/deleteProduct', p)
+    deleteProduct (product) {
+      this.$store.dispatch('products/deleteProduct', product)
     }
   }
 }

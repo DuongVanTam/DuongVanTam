@@ -1,7 +1,7 @@
 const mixin = {
   beforeCreate () {
-    this.$store.dispatch('data/getProducts')
-    this.$store.dispatch('art/getArticles')
+    this.$store.dispatch('products/getProducts')
+    this.$store.dispatch('articles/getArticles')
   }
 }
 export default mixin
