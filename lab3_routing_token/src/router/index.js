@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Dashboard from '@/components/Dashboard'
-import ProductsTable from '@/components/ProductsTable'
-import Articles from '@/components/ArticlesTable'
-import login from '@/components/login'
+import HelloWorld from '../components/HelloWorld'
+import Dashboard from '../components/Dashboard'
+import ListProducts from '../components/ListProducts'
+import ListArticles from '../components/ListArticles'
+import login from '../components/TheLogin'
 import { isAuth } from '../assets/auth'
 Vue.use(Router)
 
@@ -21,12 +21,12 @@ const router = new Router({
         },
         {
           path: 'products',
-          name: 'ProductsTable',
-          component: ProductsTable
+          name: 'ListProducts',
+          component: ListProducts
         },
         {
           path: 'articles',
-          component: Articles
+          component: ListArticles
         }
       ]
     },

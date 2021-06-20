@@ -25,7 +25,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary" style="margin-top: 20px">Submit</b-button>
+      <b-button type="submit" variant="primary" class="btn-submit">Submit</b-button>
     </b-form>
   </div>
 </template>
@@ -42,7 +42,6 @@ export default {
   },
   methods: {
     onSubmit () {
-      console.log(this.form.email === 'admin@gmail.com' && this.form.password === '123')
       if (this.form.email === 'admin@gmail.com' && this.form.password === '123') {
         localStorage.setItem('userData', JSON.stringify(this.form))
         this.$router.replace({path: '/'})
@@ -52,7 +51,7 @@ export default {
 }
 
 </script>
-<style lang="css">
+<style lang="css" scoped>
 .form-login{
   position: absolute;
   width: 264px;
@@ -62,5 +61,8 @@ export default {
   right: 0;
   bottom: 0;
   margin: auto;
+}
+.btn-submit{
+  margin-bottom: 20px;
 }
 </style>

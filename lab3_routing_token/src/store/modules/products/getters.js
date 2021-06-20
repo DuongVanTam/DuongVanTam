@@ -1,5 +1,5 @@
-const pro = state => state.products.slice(0, 3)
+const getProducts = state => state.products
 
 export default {
-  pro
+  getProducts
 }

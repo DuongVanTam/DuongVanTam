@@ -1,25 +1,25 @@
 <template>
   <section class="">
-    <Products :p="products"></Products>
-    <Articles :arti="articles"></Articles>
+    <dashboard-products :products="products"></dashboard-products>
+    <dashboard-articles :articles="articles"></dashboard-articles>
   </section>
 </template>
 
 <script>
-import Products from './Products'
-import Articles from './Articles'
+import DashboardProducts from './DashboardProducts'
+import DashboardArticles from './DashboardArticles'
 import mixin from '../mixins'
 import { mapGetters } from 'vuex'
 export default {
   components: {
-    Products,
-    Articles
+    DashboardProducts,
+    DashboardArticles
   },
   mixins: [mixin],
   computed: {
     ...mapGetters({
-      products: 'data/pro',
-      articles: 'art/art'
+      products: 'products/getProducts',
+      articles: 'articles/getArticles'
     })
   }
 }

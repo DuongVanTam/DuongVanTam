@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import data from './modules/products'
-import art from './modules/articles'
+import products from './modules/products'
+import articles from './modules/articles'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    data,
-    art
+    products,
+    articles
   },
   state: {},
   getters: {},

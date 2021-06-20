@@ -1,7 +1,7 @@
 <template>
     <div>
       <b-table
-        :items="a"
+        :items="dataArticles"
         :fields="fields"
         striped
         responsive
@@ -19,7 +19,7 @@
           {{data.value | dsText}}
         </template>
         <template #cell(action)="data">
-          <b-icon icon="trash" @click="deleteA(data)"></b-icon>
+          <b-icon icon="trash" @click="deleteArticles(data)"></b-icon>
         </template>
       </b-table>
     </div>
@@ -32,7 +32,7 @@ import {
 } from 'bootstrap-vue'
 
 export default {
-  name: 'ProductsTable',
+  name: 'ArticlesTable',
   components: {
     BTable,
     BFormCheckbox,
@@ -45,13 +45,13 @@ export default {
   },
   mixins: [mixin],
   computed: {
-    a: function () {
-      return this.$store.state.art.articles
+    dataArticles: function () {
+      return this.$store.state.articles.articles
     }
   },
   methods: {
-    deleteA (ar) {
-      this.$store.dispatch('art/deleteArticle', ar)
+    deleteArticles (article) {
+      this.$store.dispatch('articles/deleteArticle', article)
     }
   }
 }

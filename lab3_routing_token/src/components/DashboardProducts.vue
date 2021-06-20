@@ -2,7 +2,7 @@
 <div id="products" class="row" style="margin-left: 0px;">
   <h1>Products</h1>
   <div class="col-md-4"
-       v-for="(product,index) in p"
+       v-for="(product,index) in products"
        :key="index">
     <b-card
       class="ecommerce-card "
@@ -46,12 +46,12 @@ export default {
     BLink
   },
   props: {
-    p: {
+    products: {
       type: Array,
+      required: true,
       validate: function (value) {
         return value.length > 3
-      },
-      default: () => [1, 2]
+      }
     }
   }
 }
