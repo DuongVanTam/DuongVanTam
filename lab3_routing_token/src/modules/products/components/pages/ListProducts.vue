@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import mixin from '../mixins'
+import mixin from '../../../../mixins'
 import {
   BTable, BFormCheckbox, BAvatar, BIcon
 } from 'bootstrap-vue'

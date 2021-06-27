@@ -5,7 +5,7 @@
         <div class="menu-left">
           <div>
             <b-navbar-brand href="#" >
-              <img src="../assets/logo.png" width="50" height="50" class="d-inline-block align-top lef" alt="Kitten">
+              <img src="../../assets/logo.png" width="50" height="50" class="d-inline-block align-top lef" alt="Kitten">
               <span style="vertical-align: middle;">BootstrapVue</span>
             </b-navbar-brand>
           </div>

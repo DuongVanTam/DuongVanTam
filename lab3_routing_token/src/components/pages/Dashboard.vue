@@ -8,7 +8,7 @@
 <script>
 import DashboardProducts from './DashboardProducts'
 import DashboardArticles from './DashboardArticles'
-import mixin from '../mixins'
+import mixin from '../../mixins'
 import { mapGetters } from 'vuex'
 export default {
   components: {

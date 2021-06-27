@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '../components/HelloWorld'
-import Dashboard from '../components/Dashboard'
-import ListProducts from '../components/ListProducts'
-import ListArticles from '../components/ListArticles'
-import login from '../components/TheLogin'
+import HelloWorldViews from '../views/HelloWorldViews'
+import Dashboard from '../components/pages/Dashboard'
+import ListProducts from '../modules/products/components/pages/ListProducts'
+import ListArticles from '../modules/articles/components/pages/ListArticles'
+import login from '../components/pages/TheLogin'
 import { isAuth } from '../assets/auth'
 Vue.use(Router)
 
@@ -12,8 +12,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      name: 'HelloWorldViews',
+      component: HelloWorldViews,
       children: [
         {
           path: '/',
