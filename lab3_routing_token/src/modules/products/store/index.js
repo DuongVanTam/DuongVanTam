@@ -1,4 +1,4 @@
-import actions from './action'
+import actions from './actions'
 import mutations from './mutations'
 import getters from './getters'
 
