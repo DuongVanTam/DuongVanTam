@@ -6,6 +6,7 @@ import { getValueFromStorageByKey } from '@/utils/local-storage'
 // Routes
 // import { canNavigate } from '@/libs/acl/routeProtection'
 // import { isUserLoggedIn, getUserData, getHomeRouteForLoggedInUser } from '@/auth/utils'
+import { rou } from '@/modules/figma/router'
 import trangChu from './trang-chu'
 import hoSo from './ho-so'
 import danhmuc from './danh-muc'
@@ -25,6 +26,7 @@ const router = new VueRouter({
     ...hoSo,
     ...pages,
     ...danhmuc,
+    ...rou,
     {
       path: '*',
       redirect: 'error-404',

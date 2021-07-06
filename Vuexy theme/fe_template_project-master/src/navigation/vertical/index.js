@@ -33,6 +33,7 @@ tagVariant
 import danhMuc from '../../modules/danh-muc/navigation/vertical/danh-muc'
 import hoSo from '../../modules/ho-so/navigation/vertical/ho-so'
 import trangChu from '../../modules/trang-chu/navigation/vertical/trang-chu'
+import a from '../../modules/figma/navigation/vertical/ho-so'
 
 // Array of sections
-export default [...trangChu, ...hoSo, ...danhMuc]
+export default [...trangChu, ...hoSo, ...danhMuc, ...a]
