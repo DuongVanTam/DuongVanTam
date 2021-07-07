@@ -2,7 +2,7 @@
   <BaseHeader />
 </template>
 <script>
-import BaseHeader from '../components/pages/BaseHeader.vue'
+import BaseHeader from '../components/pages/TheMain.vue'
 
 export default {
   name: 'FullPage',
