@@ -2,7 +2,7 @@
   <div class="blockContainer">
     <BaseHeader />
     <div class="main">
-      <div class="container-row">
+      <div class="container-row mal">
         <div class="row">
           <ContentLeft />
           <ContentRight />
@@ -34,6 +34,7 @@ export default {
   width: 1440px;
   margin: auto;
 }
+
 @media screen and (max-width: 1320px) {
   .blockContainer{
     width: 1140px;
@@ -75,5 +76,9 @@ export default {
   .header__content-top{
     height: unset;
   }
+}
+.mal{
+  padding: 0 30px 500px 30px;
+  background: rgb(255, 255, 255);
 }
 </style>

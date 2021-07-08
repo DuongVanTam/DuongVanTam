@@ -28,7 +28,6 @@ export default {
 .footer{
   background: #DB353A;
   height: 153px;
-  margin-top: 500px;
 }
 .footer--padding{
   padding: 24px 200px;

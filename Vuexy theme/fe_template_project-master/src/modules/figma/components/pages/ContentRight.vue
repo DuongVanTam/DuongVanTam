@@ -267,4 +267,7 @@ export default {
   margin-left: 15px;
   margin-right: 15px;
 }
+.fa-circle{
+  color: red;
+}
 </style>

@@ -52,6 +52,7 @@ export default {
   methods: {
     onSave() {
       const payload = this.$refs.hoSoForm.getRequestForm()
+      console.log(payload)
       this.$refs.hoSoForm.$refs.hoSoRules.validate().then(success => {
         if (success) {
           this.$store.dispatch('hoSo/taoHoSo', payload)

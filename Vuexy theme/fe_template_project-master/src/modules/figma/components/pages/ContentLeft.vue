@@ -598,4 +598,8 @@ export default {
 .fa-download{
   margin-right: 5px;
 }
+.main__image--fit{
+  object-fit: contain;
+  max-width: 100%;
+}
 </style>

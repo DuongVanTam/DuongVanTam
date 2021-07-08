@@ -114,4 +114,13 @@ export default {
     height: unset;
   }
 }
+@media screen and (max-width: 992px) {
+
+  .header__content--line-height{
+    line-height: unset !important;
+  }
+  .header__content-top{
+    height: unset;
+  }
+}
 </style>
